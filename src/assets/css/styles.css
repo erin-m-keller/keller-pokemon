@@ -1,0 +1,214 @@
+/************************************************
+*
+*   Main Stylesheet
+*   @version (1.0)
+*   @date (2023)
+*
+*   1.) GENERAL ________________ @general
+*   2.) CARD ___________________ @card
+*   3.) COUNTDOWN TIMER ________ @countdownTimer
+*   4.) QUESTIONS ______________ @questions
+*   5.) TIMESUP ________________ @timesup
+*   5.) HIGH SCORES ____________ @highscores
+*   6.) FOOTER _________________ @footer
+*
+************************************************/
+
+/************************************************
+   GENERAL                              @general
+
+   The base styles for the page, text
+   and links. Includes utility class styles
+************************************************/
+:root {
+    --color-one: #18020c;
+    --color-two: #634b66;
+    --color-three: #9590a8;
+    --color-four: #bbcbcb;
+    --color-five: #e5ffde;
+
+    --font-main-style: "Roboto Slab", sans-serif;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+main {
+    min-height: 64vh;
+    background-color: var(--color-four);
+}
+.container {
+    padding: 2em;
+}
+.tag:not(body) {
+    color: #FFF;
+    align-items: center;
+    border-radius: 0.375em;
+    display: inline-flex;
+    font-size: .75rem;
+    height: 2em;
+    justify-content: center;
+    line-height: 1.5;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    white-space: nowrap;
+}
+.normal {
+    background-color: #b9b9a6;
+}
+.fire {
+    background-color: #f08030;
+}
+.water {
+    background-color: #6790f0;
+}
+.water {
+    background-color: #6790f0;
+}
+.grass {
+    background-color: #78c84f;
+}
+.electric {
+    background-color: #f9cf30;
+}
+.ice {
+    background-color: #98d8d8;
+}
+.fighting {
+    background-color: #c03028;
+}
+.poison {
+    background-color: #9f40a0;
+}
+.ground {
+    background-color: #e0c068;
+}
+.flying {
+    background-color: #a890f0;
+}
+.psychic {
+    background-color: #f85888;
+}
+.bug {
+    background-color: #a8b720;
+}
+.rock {
+    background-color: #b8a039;
+}
+.ghost {
+    background-color: #705898;
+}
+.dark {
+    background-color: #705848;
+}
+.dragon {
+    background-color: #7038f8;
+}
+.steel {
+    background-color: #b8b8d0;
+}
+.fairy {
+    background-color: #f0b6bc;
+}
+.dark {
+    background-color: #191919;
+}
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@media screen and (max-width: 991px) {
+    .column-margin {
+      margin: 5px 0;
+    }
+}
+
+/************************************************
+   HEADER                                 @header
+
+   The base styles for the header
+************************************************/
+.logo {
+    width: 10em;
+    pointer-events: none;
+}
+.logo-wrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.logo-wrapper .poke-ball {
+    width: 1.25em;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.header {
+    background-color: var(--color-one);
+    min-height: 15em;
+    color: white;
+}
+.search-wrapper {
+    width: 100%;
+    text-align: center;
+}
+.search-wrapper h1,
+.search-wrapper .rbt {
+    font-family: var(--font-main-style);
+}
+.search-wrapper .rbt {
+    margin: 1em auto !important;
+}
+.form-control {
+    width: 50%;
+    margin: 0 auto;
+    max-width: 21em;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+.table {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/************************************************
+   FOOTER                                 @footer
+
+   The styles for the footer
+************************************************/
+.footer {
+    text-align: center;
+    height: 3rem;
+    width: 100%;
+    background-color: var(--color-two);
+    display: table;
+    padding: 0.5rem;
+  }
+  .footer h4 {
+    font-family: var(--font-main-style);
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: var(--color-five);
+  }
+  .footer a {
+    font-family: var(--font-main-style);
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: var(--color-five);
+  }
+  .footer div.vertical-center {
+    display:table-cell;
+  }

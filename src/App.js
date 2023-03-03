@@ -47,6 +47,7 @@ function App() {
       flavorTxt = localStorage.getItem(selected + "-flavortext");
 
     if (!abilities || !moves || !sprites || !stats || !types || !weight || !flavorTxt) {
+      setPokemonFlavorText("");
       await fetch(url).then((res) => res.json()).then((json) => {
         setPokemonAbilities(json.abilities);
         setPokemonMoves(json.moves);
@@ -78,6 +79,7 @@ function App() {
         }
       });
     } else {
+      setPokemonFlavorText("");
       setPokemonAbilities(JSON.parse(abilities));
       setPokemonMoves(JSON.parse(moves));
       setPokemonSprites(JSON.parse(sprites));

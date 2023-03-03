@@ -66,7 +66,7 @@ function App() {
         evolutionUrl = json.evolution_chain;
         for (let i = 0; i < json.flavor_text_entries.length; i++) {
           let versionName = json.flavor_text_entries[i].version.name;
-          if (versionName === "red") {
+          if (versionName === "red" || versionName === "gold") {
             let flavorTxt = json.flavor_text_entries[i].flavor_text,
                 flavorTxtValue;
             if (flavorTxt) {
@@ -204,25 +204,19 @@ function App() {
                       <Accordion.Header>#{l}&nbsp;{capitalizeStr(movesKey.move.name)}</Accordion.Header>
                       <Accordion.Body>
                         <table className="table table-striped table-sm">
-                          <thead className="thead-dark">
+                          <thead className="table-dark">
                             <tr>
                               <th scope="col">Version</th>
                               <th scope="col">Level Learned At</th>
                             </tr>
                           </thead>
                           <tbody>
-                              <tr>
-                                <td>
-                                  {movesKey.version_group_details.map((versionNameKey, m) => (
-                                    <p key={m}>{versionNameKey.version_group.name.toUpperCase()}</p>
-                                  ))}
-                                </td>
-                                <td>
-                                  {movesKey.version_group_details.map((versionGroupKey, n) => (
-                                    <p key={n}>{versionGroupKey.level_learned_at}</p>
-                                  ))}
-                                </td>
+                            {movesKey.version_group_details.map((versionNameKey, m) => (
+                              <tr key={m}>
+                                <td>{versionNameKey.version_group.name.toUpperCase()}</td>
+                                <td>{versionNameKey.level_learned_at}</td>
                               </tr>
+                            ))}
                           </tbody>
                         </table>
                       </Accordion.Body>

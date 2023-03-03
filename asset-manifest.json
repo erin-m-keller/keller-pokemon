@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/keller-pokemon/static/css/main.5e344964.css",
-    "main.js": "/keller-pokemon/static/js/main.99e449c9.js",
+    "main.js": "/keller-pokemon/static/js/main.2d79d654.js",
     "static/media/poke-ball.png": "/keller-pokemon/static/media/poke-ball.8cf10a053d27f3d5bf43.png",
     "static/media/logo.svg": "/keller-pokemon/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/keller-pokemon/index.html",
     "main.5e344964.css.map": "/keller-pokemon/static/css/main.5e344964.css.map",
-    "main.99e449c9.js.map": "/keller-pokemon/static/js/main.99e449c9.js.map"
+    "main.2d79d654.js.map": "/keller-pokemon/static/js/main.2d79d654.js.map"
   },
   "entrypoints": [
     "static/css/main.5e344964.css",
-    "static/js/main.99e449c9.js"
+    "static/js/main.2d79d654.js"
   ]
 }

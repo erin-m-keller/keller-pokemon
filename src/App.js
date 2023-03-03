@@ -66,7 +66,7 @@ function App() {
         evolutionUrl = json.evolution_chain;
         for (let i = 0; i < json.flavor_text_entries.length; i++) {
           let versionName = json.flavor_text_entries[i].version.name;
-          if (versionName === "red" || versionName === "gold") {
+          if (versionName[0]) {
             let flavorTxt = json.flavor_text_entries[i].flavor_text,
                 flavorTxtValue;
             if (flavorTxt) {

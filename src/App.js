@@ -67,12 +67,14 @@ function App() {
         for (let i = 0; i < json.flavor_text_entries.length; i++) {
           let versionName = json.flavor_text_entries[i].version.name;
           if (versionName === "red") {
-            let flavorTxt = json.flavor_text_entries[i].flavor_text;
+            let flavorTxt = json.flavor_text_entries[i].flavor_text,
+                flavorTxtValue;
             if (flavorTxt) {
-              setPokemonFlavorText(json.flavor_text_entries[i].flavor_text);
+              flavorTxtValue = json.flavor_text_entries[i].flavor_text;
             } else {
-              setPokemonFlavorText("No description found.");
+              flavorTxtValue = "No description found.";
             }
+            setPokemonFlavorText(flavorTxtValue);
             localStorage.setItem(selected + "-flavortext",JSON.stringify(json.flavor_text_entries[i].flavor_text));
             return;
           }
@@ -165,9 +167,7 @@ function App() {
                     <div className="card-header">Stat</div>
                     <div className="card-body">
                       {pokemonStats.map((statKey, i) => (
-                        <div key={i}>
-                          <p><strong>{capitalizeStr(statKey.stat.name)}</strong>:&nbsp;{statKey.base_stat}</p>
-                        </div>
+                        <p key={i}><strong>{capitalizeStr(statKey.stat.name)}</strong>:&nbsp;{statKey.base_stat}</p>
                       ))}
                       <p><strong>Weight</strong>:&nbsp;{pokemonWeight}</p>
                     </div>
@@ -177,10 +177,8 @@ function App() {
                   <div className="card bg-light mb-3 h-100 w-100 column-margin">
                     <div className="card-header">Type</div>
                     <div className="card-body">
-                      {pokemonTypes.map((typeKey, i) => (
-                        <div key={i}>
-                          <p><span className={"tag " + typeKey.type.name}>{typeKey.type.name}</span></p>
-                        </div>
+                      {pokemonTypes.map((typeKey, j) => (
+                        <p key={j}><span className={"tag " + typeKey.type.name}>{typeKey.type.name}</span></p>
                       ))}
                     </div>
                   </div>
@@ -189,10 +187,8 @@ function App() {
                   <div className="card bg-light mb-3 h-100 w-100 column-margin">
                     <div className="card-header">Ability</div>
                     <div className="card-body">
-                      {pokemonAbilities.map((abilityKey, j) => (
-                        <div key={j}>
-                          <p><span className="tag dark">{capitalizeStr(abilityKey.ability.name)}</span></p>
-                        </div>
+                      {pokemonAbilities.map((abilityKey, k) => (
+                        <p key={k}><span className="tag dark">{capitalizeStr(abilityKey.ability.name)}</span></p>
                       ))}
                     </div>
                   </div>
@@ -203,9 +199,9 @@ function App() {
             <article className="container">
               <h2>Moves</h2>
               <Accordion defaultActiveKey="0">
-                {pokemonMoves.map((movesKey, k) => (
-                    <Accordion.Item eventKey={k}>
-                      <Accordion.Header>#{k}&nbsp;{capitalizeStr(movesKey.move.name)}</Accordion.Header>
+                {pokemonMoves.map((movesKey, l) => (
+                    <Accordion.Item eventKey={l} key={l}>
+                      <Accordion.Header>#{l}&nbsp;{capitalizeStr(movesKey.move.name)}</Accordion.Header>
                       <Accordion.Body>
                         <table className="table table-striped table-sm">
                           <thead className="thead-dark">
@@ -215,19 +211,15 @@ function App() {
                             </tr>
                           </thead>
                           <tbody>
-                              <tr key={k}>
+                              <tr>
                                 <td>
-                                  {movesKey.version_group_details.map((versionNameKey, l) => (
-                                    <div key={l}>
-                                      {versionNameKey.version_group.name.toUpperCase()}
-                                    </div>
+                                  {movesKey.version_group_details.map((versionNameKey, m) => (
+                                    <p key={m}>{versionNameKey.version_group.name.toUpperCase()}</p>
                                   ))}
                                 </td>
                                 <td>
-                                  {movesKey.version_group_details.map((versionGroupKey, m) => (
-                                    <div key={m}>
-                                      {versionGroupKey.level_learned_at}
-                                    </div>
+                                  {movesKey.version_group_details.map((versionGroupKey, n) => (
+                                    <p key={n}>{versionGroupKey.level_learned_at}</p>
                                   ))}
                                 </td>
                               </tr>

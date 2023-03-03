@@ -66,7 +66,12 @@ function App() {
         for (let i = 0; i < json.flavor_text_entries.length; i++) {
           let versionName = json.flavor_text_entries[i].version.name;
           if (versionName === "red") {
-            setPokemonFlavorText(json.flavor_text_entries[i].flavor_text);
+            let flavorTxt = json.flavor_text_entries[i].flavor_text;
+            if (flavorTxt) {
+              setPokemonFlavorText(json.flavor_text_entries[i].flavor_text);
+            } else {
+              setPokemonFlavorText("No description found.");
+            }
             localStorage.setItem(selected + "-flavortext",JSON.stringify(json.flavor_text_entries[i].flavor_text));
             return;
           }
